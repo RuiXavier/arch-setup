@@ -16,6 +16,7 @@ alias grep='grep --color=auto'
 alias man='batman'
 alias empty-trash='find ~/.local/share/Trash/files ~/.local/share/Trash/info -mindepth 1 -delete; echo "Trash emptied! :)"'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfile-update="~/.config/dotfile-update.sh"
 
 # ==========================================
 # ENVIRONMENT VARIABLES (Paths)
