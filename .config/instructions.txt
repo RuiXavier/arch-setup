@@ -1,0 +1,12 @@
+# ARCH SETUP RECOVERY INSTRUCTIONS
+
+When formatting or setting up a fresh PC, run these commands in the terminal to bootstrap the dotfiles and run the automated installer.
+
+1. Clone the bare repository via HTTPS (no SSH key required yet):
+git clone --bare https://github.com/RuiXavier/arch-setup.git ~/.dotfiles
+
+2. Extract ONLY the installation script to avoid conflicts:
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f .config/install.sh
+
+3. Run the automated installer:
+~/.config/install.sh
