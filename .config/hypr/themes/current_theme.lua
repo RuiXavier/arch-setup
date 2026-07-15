@@ -1,0 +1,1 @@
+/home/rx/.config/hypr/themes/dark.lua

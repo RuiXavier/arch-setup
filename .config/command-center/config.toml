@@ -1,0 +1,57 @@
+[general]
+theme = "glass"
+accent_color = "blue"
+
+# 1. Telemetry spans the top
+[[layout]]
+type = "telemetry"
+
+# 2. Wofi (7/12 width)
+[[layout]]
+type = "app_launcher"
+[[layout.apps]]
+name = "Terminal"
+command = "kitty"
+icon = "terminal"
+
+[[layout.apps]]
+name = "Browser"
+command = "brave"
+icon = "browser"
+
+[[layout.apps]]
+name = "VS Code"
+command = "code"
+icon = "code"
+
+[[layout.apps]]
+name = "Files"
+command = "dolphin"
+icon = "files"
+
+# 3. Notifications (5/12 width - snaps next to Wofi)
+[[layout]]
+type = "notifications"
+
+# 4. Workspaces (7/12 width - snaps under Wofi)
+[[layout]]
+type = "workspaces"
+
+# 5. Media (5/12 width - snaps under Notifications)
+[[layout]]
+type = "media_system"
+
+# 6. Audio Slider (6/12 width)
+[[layout]]
+type = "slider"
+label = "Master Volume"
+endpoint = "audio"
+color = "#ffffff"
+
+# 7. Brightness Slider (6/12 width - snaps next to Audio)
+[[layout]]
+type = "slider"
+label = "Display Brightness"
+endpoint = "brightness"
+color = "#eab308"
+

@@ -1,0 +1,34 @@
+window {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14pt;
+    color: #cdd6f4; /* Text */
+    background-color: rgba(30, 30, 46, 0.4); /* Transparent Base for frosted glass */
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    border: 2px solid transparent;
+    background-color: rgba(24, 24, 37, 0.85); /* Mantle background */
+    border-radius: 30px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    color: #cdd6f4;
+    transition: all 0.2s ease-in-out;
+}
+
+button:focus, button:active, button:hover {
+    background-color: rgba(49, 50, 68, 0.95); /* Surface0 */
+    border: 2px solid #cba6f7; /* Mauve border on hover */
+    color: #cba6f7;
+    outline-style: none;
+}
+
+/* Explicitly linking the default SVG icons so they never disappear */
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#hibernate { background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }

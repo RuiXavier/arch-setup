@@ -1,0 +1,108 @@
+* {
+    /* Catppuccin Mocha Colors */
+    bg-alpha:               #1e1e2ed9; /* Translucent background */
+    surface-alpha:          #31324480; /* Translucent search bar */
+    surface-solid:          #313244;   /* Solid hover state */
+    blue:                   #89b4fa;
+    fg-col:                 #cdd6f4;
+    grey:                   #6c7086;
+
+    /* Base setup */
+    background-color:       transparent;
+    text-color:             @fg-col;
+    font:                   "JetBrainsMono Nerd Font 11";
+    margin:                 0;
+    padding:                0;
+    spacing:                0;
+}
+
+/* --- Main Window --- */
+window {
+    width:                  500px; /* Much smaller and slicker! */
+    background-color:       @bg-alpha;
+    border:                 1px;
+    border-color:           rgba(255, 255, 255, 0.1);
+    border-radius:          16px;
+    padding:                15px;
+}
+
+/* --- Container Stacking --- */
+mainbox {
+    children:               [ header, listview ];
+    spacing:                15px;
+}
+
+/* --- Header (Search Bar + Corner Buttons) --- */
+header {
+    orientation:            horizontal;
+    children:               [ inputbar, mode-switcher ];
+    spacing:                10px;
+}
+
+/* The Search Bar (Takes up left side) */
+inputbar {
+    children:               [ entry ];
+    background-color:       @surface-alpha;
+    border-radius:          12px;
+    padding:                10px 15px;
+    expand:                 true; /* Forces search bar to take up available space */
+}
+
+entry {
+    placeholder:            "Search...";
+    placeholder-color:      @grey;
+    vertical-align:         0.5;
+}
+
+/* The Mode Buttons (Tucked in top right corner) */
+mode-switcher {
+    orientation:            horizontal;
+    spacing:                5px;
+    expand:                 false; /* Keeps them snug in the corner */
+}
+
+button {
+    padding:                10px 15px;
+    background-color:       @surface-alpha;
+    text-color:             @grey;
+    border-radius:          12px;
+    cursor:                 pointer;
+}
+
+button selected {
+    background-color:       @blue;
+    text-color:             #1e1e2e; /* Dark text inside the blue button */
+}
+
+/* --- The List (Exactly 5 items) --- */
+listview {
+    lines:                  5; /* Shows exactly 5 apps/files at a time */
+    columns:                1; /* Single vertical list */
+    spacing:                5px;
+    scrollbar:              false;
+}
+
+/* Individual App/File Rows */
+element {
+    orientation:            horizontal;
+    children:               [ element-icon, element-text ];
+    padding:                10px;
+    spacing:                15px;
+    border-radius:          12px;
+    cursor:                 pointer;
+}
+
+element selected {
+    background-color:       @surface-solid;
+    text-color:             @blue;
+}
+
+element-icon {
+    size:                   28px;
+    vertical-align:         0.5;
+}
+
+element-text {
+    vertical-align:         0.5;
+    text-color:             inherit;
+}

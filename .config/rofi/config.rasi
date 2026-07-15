@@ -1,0 +1,138 @@
+configuration {
+    /* Enable App Search (drun) and File/Document Search (filebrowser) */
+    modi: "drun,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "JetBrainsMono Nerd Font 12";
+    
+    /* Labels for the buttons in the mode switcher */
+    display-drun: " Apps";
+    display-filebrowser: " Files";
+    
+    drun-display-format: "{name}";
+    disable-history: true;
+    sidebar-mode: false;
+}
+
+/* Clear the default theme */
+@theme "/dev/null"
+
+* {
+    /* Catppuccin Mocha Colors */
+    base:       #1e1e2e;
+    base-alpha: #1e1e2eD9;
+    mantle:     #181825;
+    text:       #cdd6f4;
+    subtext0:   #a6adc8;
+    surface0:   #313244;
+    surface1:   #45475a;
+    mauve:      #cba6f7;
+
+    background-color: transparent;
+    text-color: @text;
+    margin:  0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 450px;
+    background-color: @base-alpha;
+    border: 1px;
+    border-color: @surface1;
+    border-radius: 24px;
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 15px;
+}
+
+/* The Search Bar Container */
+inputbar {
+    background-color: @surface0;
+    border-radius: 16px;
+    padding: 8px 16px; /* Adjusted padding to hug the buttons nicely */
+    spacing: 10px;
+    /* Added mode-switcher to the right side of the search bar */
+    children: [ textbox-prompt, entry, mode-switcher ];
+}
+
+/* Hardcoded Magnifying Glass */
+textbox-prompt {
+    expand: false;
+    content: " ";
+    text-color: @subtext0;
+    font: "JetBrainsMono Nerd Font 14";
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @subtext0;
+    text-color: @text;
+    vertical-align: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   The Mode Switcher Buttons (Apps vs Files)
+-------------------------------------------------------------------------- */
+mode-switcher {
+    spacing: 8px;
+    background-color: transparent;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 12px;
+    background-color: @surface1;
+    text-color: @subtext0;
+    cursor: pointer;
+}
+
+/* The active mode button */
+button selected {
+    background-color: @mauve;
+    text-color: @base;
+}
+
+/* --------------------------------------------------------------------------
+   The List of Applications / Files
+-------------------------------------------------------------------------- */
+listview {
+    columns: 1;         
+    lines: 5;           
+    spacing: 8px;
+    fixed-height: true;
+    fixed-columns: true;
+    scrollbar: false;
+}
+
+element {
+    padding: 8px 12px;
+    border-radius: 12px;
+    spacing: 12px;
+    background-color: transparent;
+    text-color: @subtext0;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @subtext0;
+}
+
+element selected.normal {
+    background-color: @surface0;
+    text-color: @mauve; 
+}
+
+element-icon {
+    size: 28px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}

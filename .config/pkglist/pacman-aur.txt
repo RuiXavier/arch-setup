@@ -1,0 +1,17 @@
+asusctl
+brave-bin
+catppuccin-gtk-theme-mocha
+elecwhat-bin
+kvantum-theme-catppuccin-git
+libvpx1.15
+rstudio-desktop-bin
+spotify
+stremio
+supergfxctl
+swww
+ttf-symbola
+ttf-twemoji
+vesktop
+visual-studio-code-bin
+wlogout
+yay

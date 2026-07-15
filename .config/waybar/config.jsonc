@@ -1,0 +1,130 @@
+{
+	"layer": "top",
+	"output": ["eDP-1", "HDMI-A-1"],
+	"position": "top",
+	"height": 53,
+	"spacing": 8,
+	"margin-top": 8,
+	"margin-left": 12,
+	"margin-right": 12,
+	"modules-left": [
+		"custom/launcher",
+		"custom/notification",
+		"hyprland/workspaces",
+	],
+	"modules-center": ["clock", "custom/weather"],
+	"modules-right": [
+		"group/tray-drawer",
+		"hyprland/language",
+		"network",
+		"bluetooth",
+		"backlight",
+		"pulseaudio",
+		"battery",
+	],
+
+	// --- LEFT MODULES ---
+	"custom/launcher": {
+		"format": "<span font_size='16pt' rise='-2000'></span>",
+		"on-click": "rofi -show drun",
+		"tooltip": false,
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "<span font_size='16pt' rise='-2000'>{icon}</span>",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-none": "",
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"escape": true,
+	},
+
+	// --- CENTER MODULES ---
+	"clock": {
+		"interval": 1,
+		// The span tags weave through the formatting so the time parser doesn't crash
+		"format": "<span font_size='11pt'>{:%I:%M:%S %p</span>\n<span font_size='8pt' color='#a6adc8' rise='5000'>%A, %B %d}</span>",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+	},
+	"custom/weather": {
+		"exec": "~/.config/waybar/weather.sh",
+		"interval": 1800,
+		"format": "{}",
+		"tooltip": false,
+	},
+
+	// --- RIGHT MODULES ---
+
+	// --- RIGHT MODULES ---
+	"group/tray-drawer": {
+		"orientation": "horizontal",
+		"modules": ["custom/tray-arrow", "tray"],
+		"drawer": {
+			"transition-duration": 300,
+			"transition-left-to-right": false,
+		},
+	},
+	"custom/tray-arrow": {
+		"format": "<span font_size='16pt' rise='-2000'></span>",
+		"tooltip": false,
+	},
+	"tray": {
+		"icon-size": 24, // Bumped from 18 to 24 to match the new larger text/icons!
+		"spacing": 10,
+	},
+	"hyprland/language": {
+		// Restored the keyboard icon and applied the new size and alignment!
+		"format": "<span font_size='16pt' rise='-2000'></span>  {}",
+		"format-en": "EN",
+		"format-da": "DA",
+		"format-pt": "PT",
+	},
+	"network": {
+		"format-wifi": "<span font_size='16pt' rise='-2000'>󰖩</span> {essid}",
+		"format-ethernet": "<span font_size='16pt' rise='-2000'>󰈀</span> Wired",
+		"format-disconnected": "<span font_size='16pt' rise='-2000'>󰖪</span> Offline",
+		"tooltip-format": "{ipaddr}/{cidr}",
+		"max-length": 15,
+		"on-click": "nm-connection-editor",
+	},
+	"bluetooth": {
+		"format": "<span font_size='16pt' rise='-2000'></span> {status}",
+		"format-connected": "<span font_size='16pt' rise='-2000'></span> {device_alias}  ✖",
+		"on-click": "blueman-manager",
+		"max-length": 18,
+	},
+	"backlight": {
+		"format": "<span font_size='16pt' rise='-2000'>{icon}</span>  {percent}%",
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"on-scroll-up": "brightnessctl -e4 -n2 set 5%+",
+		"on-scroll-down": "brightnessctl -e4 -n2 set 5%-",
+		"tooltip": false,
+	},
+	"pulseaudio": {
+		"format": "<span font_size='16pt' rise='-2000'>{icon}</span>  {volume}%",
+		"format-muted": "<span font_size='16pt' rise='-2000'>󰖁</span>  Muted",
+		"format-icons": {
+			"default": ["", "", ""],
+		},
+		"on-click": "pavucontrol",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15,
+		},
+		"on-click": "~/.config/hypr/power_profile.sh",
+		"format": "<span font_size='16pt' rise='-2000'>{icon}</span>  {capacity}%",
+		"format-charging": "<span font_size='16pt' rise='-2000'></span>  {capacity}%",
+		"format-plugged": "<span font_size='16pt' rise='-2000'></span>  {capacity}%",
+		"format-icons": ["", "", "", "", ""],
+	},
+}
+
