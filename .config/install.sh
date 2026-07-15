@@ -68,6 +68,11 @@ else
   echo "No system backups found in ~/.config/system-backups/etc. Skipping."
 fi
 
+if [ -d "$HOME/.config/system-backups/usr" ]; then
+  echo "Copying /usr/ configurations (SDDM Theme)..."
+  sudo cp -rv "$HOME/.config/system-backups/usr/"* /usr/
+fi
+
 # 8. Set Zsh as default shell
 echo "==> Setting Zsh as default shell..."
 if [ "$SHELL" != "/usr/bin/zsh" ] && command -v zsh &>/dev/null; then

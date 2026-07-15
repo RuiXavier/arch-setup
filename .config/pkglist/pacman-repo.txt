@@ -88,6 +88,7 @@ starship
 steam
 sudo
 swaync
+tree
 ttf-droid
 ttf-jetbrains-mono-nerd
 ttf-space-mono-nerd

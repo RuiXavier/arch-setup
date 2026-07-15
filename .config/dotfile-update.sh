@@ -18,6 +18,8 @@ mkdir -p ~/.config/system-backups/etc/sddm.conf.d
 sudo cp /etc/pacman.conf ~/.config/system-backups/etc/ 2>/dev/null || true
 sudo cp /etc/sddm.conf ~/.config/system-backups/etc/ 2>/dev/null || true
 sudo cp -r /etc/sddm.conf.d/* ~/.config/system-backups/etc/sddm.conf.d/ 2>/dev/null || true
+mkdir -p ~/.config/system-backups/usr/share/sddm/themes/
+sudo cp -r /usr/share/sddm/themes/catppuccin-mocha-pink ~/.config/system-backups/usr/share/sddm/themes/ 2>/dev/null || true
 
 # Fix permissions so Git (running as your user) can read the copied files
 sudo chown -R $USER:$USER ~/.config/system-backups/
