@@ -69,6 +69,7 @@ pipewire-pulse
 polkit-kde-agent
 power-profiles-daemon
 python-pip
+qalculate-gtk
 qt5-graphicaleffects
 qt5-svg
 qt5-wayland
@@ -98,7 +99,6 @@ vim
 vlc
 wasi-compiler-rt
 wasi-libc
-waybar
 wget
 wireless_tools
 wireplumber

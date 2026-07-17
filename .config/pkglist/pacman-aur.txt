@@ -13,5 +13,6 @@ ttf-symbola
 ttf-twemoji
 vesktop
 visual-studio-code-bin
+waybar-git
 wlogout
 yay
