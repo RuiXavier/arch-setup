@@ -31,7 +31,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("~/.config/hypr/wallpaper_slideshow.sh")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
-	hl.exec_cmd("gammastep")
+	hl.exec_cmd("hyprsunset")
 end)
 
 -------------------------------

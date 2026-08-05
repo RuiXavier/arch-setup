@@ -20,7 +20,6 @@ emacs
 fastfetch
 fd
 firefox
-gammastep
 gcc-fortran
 geoclue
 git
@@ -33,6 +32,7 @@ hyprland
 hyprlock
 hyprpicker
 hyprshot
+hyprsunset
 iwd
 jdk25-openjdk
 kitty
@@ -48,6 +48,7 @@ linux-firmware
 linux-headers
 man-db
 maven
+mkcert
 mpv-mpris
 nano
 neovim
