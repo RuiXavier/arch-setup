@@ -33,7 +33,7 @@ echo "==> Checking out files from repository..."
 mkdir -p "$HOME/.dotfiles-backup"
 if config checkout 2>&1 | grep -E "\s+\."; then
   echo "Backing up pre-existing dotfiles to ~/.dotfiles-backup..."
-  config checkout 2>&1 | grep -E "\s+\." | awk {'print $1'} | xargs -I{} mv {} "$HOME/.dotfiles-backup/"
+  config checkout 2>&1 | grep -E "\s+\." | awk '{print $2}' | xargs -I{} mv {} "$HOME/.dotfiles-backup/"
 fi
 config checkout -f
 
