@@ -27,7 +27,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("hypridle")
-	hl.exec_cmd("swww-daemon")
+	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("~/.config/hypr/wallpaper_slideshow.sh")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -102,9 +102,11 @@ hl.config({
 		touchpad = {
 			natural_scroll = true,
 		},
+		numlock_by_default = true,
 	},
 	cursor = {
 		no_hardware_cursors = true,
+		use_cpu_buffer = true,
 	},
 })
 
@@ -205,6 +207,11 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+
+hl.bind("CONTROL + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind("CONTROL + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind("CONTROL + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind("CONTROL + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- Workspaces 1-9
 for i = 1, 9 do

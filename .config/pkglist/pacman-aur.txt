@@ -1,14 +1,16 @@
-asusctl
 brave-bin
 catppuccin-gtk-theme-mocha
+claude-code
 elecwhat-bin
+flix
+intellij-idea-ultimate-edition
 kvantum-theme-catppuccin-git
 libvpx1.15
 rstudio-desktop-bin
 spotify
 stremio
 supergfxctl
-swww
+teams-for-linux
 ttf-symbola
 ttf-twemoji
 vesktop
@@ -16,3 +18,5 @@ visual-studio-code-bin
 waybar-git
 wlogout
 yay
+zoom
+zotero

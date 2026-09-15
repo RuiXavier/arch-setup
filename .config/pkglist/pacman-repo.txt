@@ -1,5 +1,7 @@
 acpi
 amd-ucode
+asusctl
+awww
 base
 base-devel
 bat
@@ -14,6 +16,9 @@ calcurse
 celluloid
 cliphist
 dkms
+docker
+docker-buildx
+docker-compose
 dolphin
 efibootmgr
 emacs
@@ -35,6 +40,7 @@ hyprshot
 hyprsunset
 iwd
 jdk25-openjdk
+keychain
 kitty
 kvantum
 kvantum-qt5
@@ -54,10 +60,12 @@ nano
 neovim
 network-manager-applet
 networkmanager
+networkmanager-openconnect
 noto-fonts-cjk
 npm
 nvidia-open-dkms
 nwg-look
+obsidian
 opam
 otf-font-awesome
 pamixer

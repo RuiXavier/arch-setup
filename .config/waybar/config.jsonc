@@ -53,8 +53,9 @@
   // --- CENTER MODULES ---
   "clock": {
     "interval": 1,
+    "justify": "center",
     // The span tags weave through the formatting so the time parser doesn't crash
-    "format": "<span font_size='11pt'>{:%I:%M:%S %p</span>\n<span font_size='8pt' color='#a6adc8' rise='5000'>%A, %B %d}</span>",
+    "format": "<span font_size='11pt'>{:%H:%M:%S</span>\n<span font_size='8pt' color='#a6adc8' rise='5000'>%A, %B %d}</span>",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
   },
   "custom/weather": {

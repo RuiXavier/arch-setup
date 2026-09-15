@@ -8,3 +8,27 @@
 .config/go/
 .config/cat_installer/
 .config/elecwhat/
+
+# secrets / credential-shaped files
+.config/command-center/auth.json
+.config/rest-client/
+
+# Electron app profiles (session cookies, local storage, app binaries, cache)
+.config/teams-for-linux/
+.config/obsidian/
+
+# JetBrains: license key + telemetry + cache mixed in; use Settings Sync instead
+.config/JetBrains/
+
+# app runtime state / cache, not real config
+.config/spotify/
+.config/spicetify/CustomApps/marketplace-dist.zip
+.config/dconf/
+.config/pulse/
+.config/vscode-sqltools/
+.config/libreoffice/4/user/extensions/
+.config/libreoffice/4/user/pack/
+.config/libreoffice/4/user/uno_packages/cache/
+.config/libreoffice/4/user/GraphicsRenderTests.log
+.config/libreoffice/4/user/unopkg.log
+.config/libreoffice/4/user/config/javasettings_Linux_X86_64.*

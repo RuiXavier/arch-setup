@@ -17,6 +17,7 @@ alias man='batman'
 alias empty-trash='find ~/.local/share/Trash/files ~/.local/share/Trash/info -mindepth 1 -delete; echo "Trash emptied! :)"'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dotfile-update="~/.config/dotfile-update.sh"
+alias nh='(){ nohup "$@" &>/dev/null &; }'
 
 # ==========================================
 # ENVIRONMENT VARIABLES (Paths)
@@ -51,3 +52,7 @@ fastfetch
 # END opam configuration
 
 [ -f "/home/rx/.ghcup/env" ] && . "/home/rx/.ghcup/env" # ghcup-env
+
+eval $(keychain --eval --quiet id_ed25519)
+
+export PATH=$PATH:/home/rx/.spicetify
