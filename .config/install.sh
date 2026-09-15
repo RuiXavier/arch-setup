@@ -76,7 +76,17 @@ if [ -d "$HOME/.config/system-backups/usr" ]; then
   sudo cp -rv "$HOME/.config/system-backups/usr/"* /usr/
 fi
 
-# 8. Set Zsh as default shell
+# 8. Enable essential services (nothing starts these on its own after a fresh install)
+echo "==> Enabling essential services..."
+for svc in NetworkManager bluetooth sddm docker power-profiles-daemon avahi-daemon supergfxd; do
+  if systemctl list-unit-files "${svc}.service" --no-legend 2>/dev/null | grep -q "^${svc}.service"; then
+    sudo systemctl enable "$svc"
+  else
+    echo "  (skipping $svc - unit not found, package probably didn't install)"
+  fi
+done
+
+# 9. Set Zsh as default shell
 echo "==> Setting Zsh as default shell..."
 if [ "$SHELL" != "/usr/bin/zsh" ] && command -v zsh &>/dev/null; then
   chsh -s /usr/bin/zsh
