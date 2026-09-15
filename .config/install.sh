@@ -3,6 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# Paths below (backup mv, checkout conflict list) are relative to $HOME
+cd "$HOME"
+
 echo "========================================="
 echo "  Starting System Restoration Process  "
 echo "========================================="
@@ -33,7 +36,7 @@ echo "==> Checking out files from repository..."
 mkdir -p "$HOME/.dotfiles-backup"
 if config checkout 2>&1 | grep -E "\s+\."; then
   echo "Backing up pre-existing dotfiles to ~/.dotfiles-backup..."
-  config checkout 2>&1 | grep -E "\s+\." | awk '{print $2}' | xargs -I{} mv {} "$HOME/.dotfiles-backup/"
+  config checkout 2>&1 | grep -E "\s+\." | awk '{print $NF}' | xargs -I{} mv {} "$HOME/.dotfiles-backup/"
 fi
 config checkout -f
 
